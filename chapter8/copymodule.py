@@ -41,6 +41,26 @@ class HauntedBus:
     def __init__(self, passagers = []):
         self.passagers = passagers
 
+    def pick(self, name):
+        self.passagers.append(name)
 
+    def drop(self, name):
+        self.passagers.remove(name)
+
+
+# But now take a look what happen
+hbus1 = HauntedBus()
+hbus1.pick('alice')
+
+hbus2 = HauntedBus()
+
+# Take a look
+print(hbus2.passagers)
+
+# Are the same list because this list is contained by te function
+print(id(hbus1.passagers))
+print(id(hbus2.passagers))
+
+# Avoid use this type of things is better that all your parameters be declared by default of noun
 
 
