@@ -8,11 +8,14 @@ import math
 
 
 class Vector2d:
+    # This is an attribute of the class
+    typecode = 'd'
+    
     def __init__(self, x, y):
         self.x = float(x)
         self.y = float(y)
 
-    # Permits to iterate a list of 'Vector2d'
+    # Permits To be iterate the vector
     def __iter__(self):
         return (i for i in (self.x, self.y))
 
@@ -44,9 +47,29 @@ class Vector2d:
 
 
 
+"""
+So lets test this thing
+"""
+
+myvec = Vector2d(1, 2)
 
 
+print(myvec) # (1.0, 2.0)
+
+print(str(myvec)) # (1.0, 2.0)
 
 
+print(bytes(myvec)) # b'd\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\x00@'
 
+print(myvec == myvec) # True
+
+print(abs(myvec)) # 2.23606797749979
+
+print(bool(myvec)) # True
+
+
+"""
+This is the way of how we can do operator overloading in python
+There are more functions but this works perfectly 
+"""
 
